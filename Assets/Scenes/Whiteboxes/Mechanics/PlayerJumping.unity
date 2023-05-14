@@ -722,6 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 100
+  highHeight: 1
   rotationSpeed: 10
   walkingSpeed: 100
   runningSpeed: 1
@@ -841,11 +842,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b22dd3ab45337240987e0d7b35ddd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 2
+  height: 1.05
+  highHeight: 3
   rotationSpeed: 10
-  walkingSpeed: 1
-  runningSpeed: 2
-  jumpForce: 2
+  walkingSpeed: 4
+  runningSpeed: 8
+  jumpForce: 16
   Gravity: {x: 0, y: -9.8, z: 0}
 --- !u!143 &1702770889
 CharacterController:

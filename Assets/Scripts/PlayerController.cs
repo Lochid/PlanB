@@ -1,18 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float height = 1;
+    public float highHeight = 1;
     public float rotationSpeed = 100;
     public float walkingSpeed = 1;
     public float runningSpeed = 2;
+    public float jumpForce = 1;
+
+    public Vector3 Gravity;
 
     private Vector3 moveDirection;
     private CharacterController _controller;
 
     private bool isRunning = false;
+    private bool isJumping = false;
 
+    private float horizontalTurning = 0;
+    private float verticalTurning = 0;
+
+    private float horizontalMoving = 0;
+    private float verticalMoving = 0;
+
+    bool IsGrounded => Physics.Raycast(transform.position, -Vector3.up, height);
+
+    bool IsHighGrounded => Physics.Raycast(transform.position, -Vector3.up, highHeight);
+    bool startJump = false;
     public void OnRunning()
     {
         isRunning = true;
@@ -20,6 +34,31 @@ public class PlayerController : MonoBehaviour
     public void OnUnrunning()
     {
         isRunning = false;
+    }
+
+    public void OnJumping()
+    {
+        isJumping = true;
+    }
+    public void OnUnjumping()
+    {
+        isJumping = false;
+    }
+    public void OnHorizontalTurning(float horizontalTurning)
+    {
+        this.horizontalTurning = horizontalTurning;
+    }
+    public void OnVerticalTurning(float verticalTurning)
+    {
+        this.verticalTurning = verticalTurning;
+    }
+    public void OnHorizontalMoving(float horizontalMoving)
+    {
+        this.horizontalMoving = horizontalMoving;
+    }
+    public void OnVerticalMoving(float verticalMoving)
+    {
+        this.verticalMoving = verticalMoving;
     }
 
     void Start()
@@ -30,19 +69,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(IsGrounded);
         CalculateTurning();
         CalculateMovement();
     }
 
     void CalculateTurning()
     {
-        float yawMouse = Input.GetAxis("Mouse X");
-        float pitchMouse = -Input.GetAxis("Mouse Y");
-
-
-        if (Mathf.Abs(yawMouse) > 0.1f || Mathf.Abs(pitchMouse) > 0.1f)
+        if (Mathf.Abs(horizontalTurning) > 0.1f || Mathf.Abs(verticalTurning) > 0.1f)
         {
-            var targetFlyRotation = yawMouse * transform.right + pitchMouse * transform.up;
+            var targetFlyRotation = horizontalTurning * transform.right - verticalTurning * transform.up;
             targetFlyRotation.Normalize();
             targetFlyRotation *= Time.deltaTime * 3.0f;
 
@@ -53,15 +89,41 @@ public class PlayerController : MonoBehaviour
 
     void CalculateMovement()
     {
-        var vert = Input.GetAxis("Vertical");
-        var hori = Input.GetAxis("Horizontal");
-        var speed = isRunning ? runningSpeed : walkingSpeed;
+        var horizontalVelocity = Vector3.zero;
+        var verticalVelocity = Vector3.zero;
+        var jumpVelocity = Vector3.zero;
+            var speed = isRunning ? runningSpeed : walkingSpeed;
+            horizontalVelocity = -new Vector3(
+               transform.right.x * horizontalMoving,
+               0,
+               transform.right.z * horizontalMoving
+            ) * speed;
+            verticalVelocity = -new Vector3(
+               transform.forward.x * verticalMoving,
+               0,
+               transform.forward.z * verticalMoving
+            ) * speed;
 
-        var _velocity = new Vector3(
-            transform.forward.x * vert + transform.right.x * hori,
-            0,
-            transform.forward.z * vert + transform.right.z * hori
-            );
-        _controller.Move(-_velocity * Time.deltaTime * speed);
+        if (IsGrounded)
+        {
+            if (isJumping && !startJump)
+            {
+                startJump = true;
+            }
+        }
+
+        if (startJump)
+        {
+            if (!IsHighGrounded)
+            {
+                startJump = false;
+            }
+            jumpVelocity = new Vector3(
+              0,
+              jumpForce,
+              0
+           );
+        }
+        _controller.Move((Gravity + horizontalVelocity + verticalVelocity + jumpVelocity) * Time.deltaTime);
     }
 }
