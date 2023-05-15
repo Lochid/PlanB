@@ -635,7 +635,6 @@ GameObject:
   - component: {fileID: 1627427802}
   - component: {fileID: 1627427801}
   - component: {fileID: 1627427800}
-  - component: {fileID: 1627427803}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -709,24 +708,6 @@ Transform:
   m_Father: {fileID: 1702770886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -171.118, z: 0}
---- !u!114 &1627427803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627427799}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b22dd3ab45337240987e0d7b35ddd6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 100
-  rotationSpeed: 10
-  walkingSpeed: 100
-  runningSpeed: 1
-  jumpForce: 2
-  Gravity: {x: 0, y: 0, z: 0}
 --- !u!1 &1702770882
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +721,6 @@ GameObject:
   - component: {fileID: 1702770884}
   - component: {fileID: 1702770883}
   - component: {fileID: 1702770889}
-  - component: {fileID: 1702770890}
   - component: {fileID: 1702770888}
   m_Layer: 0
   m_Name: PlayerCapsule
@@ -821,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702770882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.05, z: 0}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -841,12 +821,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b22dd3ab45337240987e0d7b35ddd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 2
-  rotationSpeed: 10
-  walkingSpeed: 1
-  runningSpeed: 2
-  jumpForce: 2
+  RunningKey: 304
+  JumpingKey: 32
+  SittingKey: 306
   Gravity: {x: 0, y: -9.8, z: 0}
+  Height: 1.04
+  JumpSpeed: 4
+  crowdSpeed: 5
+  walkingSpeed: 10
+  runningSpeed: 20
+  rotationSpeed: 10
 --- !u!143 &1702770889
 CharacterController:
   m_ObjectHideFlags: 0
@@ -865,140 +849,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1702770890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702770882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58fef25bace4ec48ab4ebd39c83a1b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnChangeHorizontalTurning:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnHorizontalTurning
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnChangeVerticalTurning:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnVerticalTurning
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnChangeHorizontalMoving:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnHorizontalMoving
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnChangeVerticalMoving:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnVerticalMoving
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  RunningKey: 304
-  OnStartRunning:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnRunning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnStopRunning:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnUnrunning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  JumpingKey: 32
-  OnStartJumping:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJumping
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnStopJumping:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702770888}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnUnjumping
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1878057625
 GameObject:
   m_ObjectHideFlags: 0
