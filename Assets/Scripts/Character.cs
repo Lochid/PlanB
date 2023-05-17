@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace PlanB
 {
     [RequireComponent(typeof(CharacterController))]
-    public class Player : MonoBehaviour
+    public class Character : MonoBehaviour
     {
         private float horizontalTurning => Input.GetAxis("Mouse X");
         private float verticalTurning => Input.GetAxis("Mouse Y");
@@ -144,20 +144,22 @@ namespace PlanB
                 objectForUse = null;
             }
 
-            if (objectForUse != null && objectForUse.Active)
+            if (uiText != null)
             {
-                uiText.text = $"Press \"{UsingKey}\"\n For {objectForUse.ActionName}";
-            }
-            else
-            {
-                uiText.text = "";
-            }
+                if (objectForUse != null && objectForUse.Active)
+                {
+                    uiText.text = $"Press \"{UsingKey}\"\n For {objectForUse.ActionName}";
+                }
+                else
+                {
+                    uiText.text = "";
+                }
 
-            if (isUsingPressed)
-            {
-                uiText.text = "";
+                if (isUsingPressed)
+                {
+                    uiText.text = "";
+                }
             }
-
             if (isUsingPressed && !isUsing)
             {
                 isUsing = true;
