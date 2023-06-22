@@ -1818,10 +1818,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7632658613919892015, guid: 81b3185c5cdd7714aaf17c6508dc2370, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e0f2227e0918b4aabd1e6403d5945e, type: 2}
     - target: {fileID: 919132149155446097, guid: 81b3185c5cdd7714aaf17c6508dc2370, type: 3}
       propertyPath: m_Name
       value: CeilingFan
       objectReference: {fileID: 0}
+    - target: {fileID: 4299802820655863920, guid: 81b3185c5cdd7714aaf17c6508dc2370, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e0f2227e0918b4aabd1e6403d5945e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b3185c5cdd7714aaf17c6508dc2370, type: 3}
 --- !u!4 &617866543 stripped
