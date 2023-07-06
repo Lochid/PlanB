@@ -78,7 +78,6 @@ namespace PlanB
             _controller = GetComponent<CharacterController>();
             _audio = GetComponent<AudioSource>();
             originalHeight = _controller.height;
-
         }
 
         void Update()
