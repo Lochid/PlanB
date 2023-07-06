@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace PlanB
 {
     [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(AudioSource))]
     public class Character : MonoBehaviour
     {
         private float horizontalTurning => Input.GetAxis("Mouse X");
@@ -66,10 +68,15 @@ namespace PlanB
         public Text uiText;
         private bool isUsing = false;
 
+        public List<AudioClip> stepSounds;
+        private float stepAwaiting = 0;
+        public float awaitingBetweenSteps = 1;
+        private AudioSource _audio;
         void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
             _controller = GetComponent<CharacterController>();
+            _audio = GetComponent<AudioSource>();
             originalHeight = _controller.height;
         }
 
@@ -113,6 +120,22 @@ namespace PlanB
                 var moveSpeed = movementSpeed;
                 _speed.x = moveSpeed.x;
                 _speed.z = moveSpeed.z;
+            }
+
+
+            if (System.Math.Abs(_speed.x) + System.Math.Abs(_speed.z) > 0.1)
+            {
+                stepAwaiting += Time.deltaTime;
+            }
+            else
+            {
+                stepAwaiting = 0;
+            }
+
+            if (stepAwaiting >= awaitingBetweenSteps)
+            {
+                _audio.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Count)], 1f);
+                stepAwaiting = 0;
             }
 
             _controller.Move(_speed * Time.deltaTime);
