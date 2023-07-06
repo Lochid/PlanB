@@ -11,6 +11,7 @@ public enum FluorescentLampState
 public class FluorescentLampController : MonoBehaviour
 {
     MeshRenderer mesh;
+    AudioSource audioSource;
     public List<GameObject> lights;
     public Material turnOnMaterial;
     public Material turnOffMaterial;
@@ -25,12 +26,14 @@ public class FluorescentLampController : MonoBehaviour
     bool on = false;
     bool turningOnProcess = false;
     int iteration = 0;
+    public List<AudioClip> blinkSounds;
 
     // Start is called before the first frame update
     void Start()
     {
         mesh = GetComponent<MeshRenderer>();
-        switch(state)
+        audioSource = GetComponent<AudioSource>();
+        switch (state)
         {
             case FluorescentLampState.TurnedOn:
                 StartTurningOn();
@@ -46,6 +49,9 @@ public class FluorescentLampController : MonoBehaviour
 
     void TurnOn()
     {
+        var clip = blinkSounds[Random.Range(0, blinkSounds.Count)];
+        audioSource.PlayOneShot(clip, 10f);
+        Invoke("PlayWorkingSound", clip.length);
         var materials = mesh.materials;
         materials[1] = turnOnMaterial;
         mesh.materials = materials;
@@ -56,8 +62,14 @@ public class FluorescentLampController : MonoBehaviour
         turnedOn = true;
     }
 
+    void PlayWorkingSound()
+    {
+        audioSource.Play();
+    }
+
     void TurnOff()
     {
+        audioSource.Stop();
         var materials = mesh.materials;
         materials[1] = turnOffMaterial;
         mesh.materials = materials;
@@ -79,7 +91,7 @@ public class FluorescentLampController : MonoBehaviour
         {
             TurnOn();
         }
-        if(iteration >= turnOnBlinkTimes && turningOnProcess)
+        if (iteration >= turnOnBlinkTimes && turningOnProcess)
         {
             TurnOn();
             return;
