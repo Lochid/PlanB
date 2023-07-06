@@ -1790,7 +1790,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ae07672ba53d85a4ab332662c03b5c76, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 152d494d9ec83d947917cd04cb5e648b, type: 2}
+      objectReference: {fileID: 2100000, guid: 8fb4fe10bf600a54ca18a33d9a22adec, type: 2}
     - target: {fileID: 919132149155446097, guid: ae07672ba53d85a4ab332662c03b5c76, type: 3}
       propertyPath: m_Name
       value: DooredWall
@@ -2068,7 +2068,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3ea11c01b0a4abc4098348d08df1bb58, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a52829ebff5465448a75e24c59521239, type: 2}
+      objectReference: {fileID: 2100000, guid: 8fb4fe10bf600a54ca18a33d9a22adec, type: 2}
     - target: {fileID: 919132149155446097, guid: 3ea11c01b0a4abc4098348d08df1bb58, type: 3}
       propertyPath: m_Name
       value: Wall1
@@ -5028,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ad17deae80b85854fa916b37a0cb0fad, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 49c055d36a4fdb14ba739ae22b70e148, type: 2}
+      objectReference: {fileID: 2100000, guid: 8fb4fe10bf600a54ca18a33d9a22adec, type: 2}
     - target: {fileID: 919132149155446097, guid: ad17deae80b85854fa916b37a0cb0fad, type: 3}
       propertyPath: m_Name
       value: WindowedWall
