@@ -12,7 +12,11 @@
     ],
     "m_Keywords": [],
     "m_Dropdowns": [],
-    "m_CategoryData": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "b4e53cee271b4f0c8adbfe7a92901415"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "eabf5afa87984cea9878352f49593eec"
@@ -156,6 +160,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "06bd6a41fdf849d1b2ededca5c86be32",
+    "m_Id": 1,
+    "m_DisplayName": "Color",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Color",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "0db95e0d7c3c4d75b284674b9e124b15",
     "m_Id": 1,
@@ -263,31 +292,6 @@
         "e32": 0.0,
         "e33": 1.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "40ffdfe892364358b35ae1f894f4c744",
-    "m_Id": 1,
-    "m_DisplayName": "Out_Vector4",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "OutVector4",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
 }
 
 {
@@ -625,6 +629,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "b4e53cee271b4f0c8adbfe7a92901415",
+    "m_Name": "",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "a7d24aaf6dc3451baa5e8b32dbbf7244"
+        },
+        {
+            "m_Id": "d09e8ec24a094600a0bc8f37435732f3"
+        }
+    ]
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "bfd34d07be154c7ab527c1182edbaf85",
     "m_Id": 0,
@@ -869,7 +888,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "40ffdfe892364358b35ae1f894f4c744"
+            "m_Id": "06bd6a41fdf849d1b2ededca5c86be32"
         }
     ],
     "synonyms": [],
