@@ -98,11 +98,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 0.14
-    - _Scale: 4.15
+    - _Roughness: 0.463
+    - _Scale: 10
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _Specular: 0.584
+    - _Specular: 0.459
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
