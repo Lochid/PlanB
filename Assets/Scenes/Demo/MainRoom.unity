@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Active: 1
-  ActionName: Turn ceiling fan
+  ActionName: Turn on\off light
   OnUse:
     m_PersistentCalls:
       m_Calls:
@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Active: 1
-  ActionName: Turn ceiling fan
+  ActionName: Turn on\off ceiling fan
   OnUse:
     m_PersistentCalls:
       m_Calls:
