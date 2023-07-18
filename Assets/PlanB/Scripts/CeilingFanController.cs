@@ -1,42 +1,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CeilingFanController : MonoBehaviour
+namespace PlanB.Assets
 {
-    public Animator fanAnimator;
-    public bool turnedOn { get; private set; } = false;
+    public class CeilingFanController : MonoBehaviour
+    {
+        public Animator fanAnimator;
+        public bool turnedOn { get; private set; } = false;
 
-    public List<AudioSource> turnOnSounds;
-    public List<AudioSource> turnOffSounds;
-    public List<AudioSource> workingSounds;
-    public void Turn()
-    {
-        SetPower(!turnedOn);
-    }
-    public void SetPower(bool power)
-    {
-        turnedOn = power;
-        fanAnimator?.SetBool("Powered", power);
-        if (turnedOn)
+        public List<AudioSource> turnOnSounds;
+        public List<AudioSource> turnOffSounds;
+        public List<AudioSource> workingSounds;
+        public void Turn()
         {
-            foreach (var sound in turnOnSounds)
-            {
-                sound.Play();
-            }
-            foreach (var sound in workingSounds)
-            {
-                sound.PlayDelayed(2.5f);
-            }
+            SetPower(!turnedOn);
         }
-        else
+        public void SetPower(bool power)
         {
-            foreach (var sound in workingSounds)
+            turnedOn = power;
+            fanAnimator?.SetBool("Powered", power);
+            if (turnedOn)
             {
-                sound.Stop();
+                foreach (var sound in turnOnSounds)
+                {
+                    sound.Play();
+                }
+                foreach (var sound in workingSounds)
+                {
+                    sound.PlayDelayed(2.5f);
+                }
             }
-            foreach (var sound in turnOffSounds)
+            else
             {
-                sound.Play();
+                foreach (var sound in workingSounds)
+                {
+                    sound.Stop();
+                }
+                foreach (var sound in turnOffSounds)
+                {
+                    sound.Play();
+                }
             }
         }
     }

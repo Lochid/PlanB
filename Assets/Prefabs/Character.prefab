@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6634712124013842353}
   - component: {fileID: 6634712124013842363}
   - component: {fileID: 6634712124013842362}
+  - component: {fileID: 735474419478140064}
   - component: {fileID: 6634712123558377332}
   m_Layer: 0
   m_Name: Character
@@ -160,6 +161,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 80e8950ca9ae1e8439659290de3ec2bd, type: 3}
   - {fileID: 8300000, guid: 14510d02bed884a4492797a2d5c5b027, type: 3}
   awaitingBetweenSteps: 0.3
+--- !u!114 &735474419478140064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634712124013842352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98a09b1ae5a6d3479005296c0f89132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}
 --- !u!82 &6634712123558377332
 AudioSource:
   m_ObjectHideFlags: 0
