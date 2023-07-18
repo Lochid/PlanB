@@ -5882,6 +5882,10 @@ PrefabInstance:
       propertyPath: uiText
       value: 
       objectReference: {fileID: 1128972161}
+    - target: {fileID: 6634712124013842362, guid: b063bf66af6484d4e9d5975f2db03ae6, type: 3}
+      propertyPath: rotationSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6634712124078433448, guid: b063bf66af6484d4e9d5975f2db03ae6, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.339

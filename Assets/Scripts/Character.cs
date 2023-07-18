@@ -102,7 +102,7 @@ namespace PlanB
             if (shouldTurn)
             {
                 moveDirection += targetFlyDirection;
-                transform.rotation = Quaternion.LookRotation(moveDirection * Time.deltaTime);
+                transform.rotation = Quaternion.LookRotation(moveDirection);
             }
         }
         void UpdateMovement()
