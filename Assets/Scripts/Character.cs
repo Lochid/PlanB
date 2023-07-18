@@ -27,6 +27,9 @@ namespace PlanB
         public KeyCode UsingKey = KeyCode.E;
         private bool isUsingPressed => Input.GetKey(UsingKey);
 
+        public KeyCode ChangeUsableKey = KeyCode.Q;
+        private bool isChangeUsablePressed => Input.GetKey(ChangeUsableKey);
+
         private CharacterController _controller;
 
         public Vector3 Gravity;
@@ -65,9 +68,10 @@ namespace PlanB
         public Transform rayAnchor;
         public float rayDistance = 20;
         private Transform realRayAnchor => rayAnchor == null ? transform : rayAnchor;
-        private Usable objectForUse = null;
+        private IUsable objectForUse = null;
         public Text uiText;
         private bool isUsing = false;
+        private bool isChanging = false;
 
         public List<AudioClip> stepSounds;
         private float stepAwaiting = 0;
@@ -161,7 +165,7 @@ namespace PlanB
             RaycastHit hit;
             if (Physics.Raycast(realRayAnchor.position, realRayAnchor.TransformDirection(Vector3.forward), out hit, rayDistance))
             {
-                objectForUse = hit.collider.GetComponent<Usable>();
+                objectForUse = hit.collider.GetComponent<IUsable>();
             }
             else
             {
@@ -172,7 +176,11 @@ namespace PlanB
             {
                 if (objectForUse != null && objectForUse.Active)
                 {
-                    uiText.text = $"Press \"{UsingKey}\"\n For {objectForUse.ActionName}";
+                    uiText.text = $"Press \"{UsingKey}\"\n for {objectForUse.ActionName}";
+                    if(objectForUse.Changable)
+                    {
+                        uiText.text += $"\n\nPress \"{ChangeUsableKey}\"\n for the next action";
+                    }
                 }
                 else
                 {
@@ -180,6 +188,11 @@ namespace PlanB
                 }
 
                 if (isUsingPressed)
+                {
+                    uiText.text = "";
+                }
+
+                if (isChangeUsablePressed)
                 {
                     uiText.text = "";
                 }
@@ -196,6 +209,21 @@ namespace PlanB
             else if (!isUsingPressed && isUsing)
             {
                 isUsing = false;
+            }
+
+
+            if (isChangeUsablePressed && !isChanging)
+            {
+                isChanging = true;
+
+                if (objectForUse != null && objectForUse.Changable)
+                {
+                    objectForUse.Next();
+                }
+            }
+            else if (!isChangeUsablePressed && isChanging)
+            {
+                isChanging = false;
             }
         }
     }

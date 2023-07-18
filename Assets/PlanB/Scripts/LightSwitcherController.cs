@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class LightSwitcherController : MonoBehaviour
 {
-    public bool turnedOn;
     Animator animationController { get; set; }
-    // Start is called before the first frame update
     void Start()
     {
         animationController = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void TurnOn()
     {
-        animationController.SetBool("TurnedOn", turnedOn);
+        animationController.SetBool("TurnedOn", true);
+    }
+    public void TurnOff()
+    {
+        animationController.SetBool("TurnedOn", false);
     }
 }

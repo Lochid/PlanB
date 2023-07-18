@@ -94,8 +94,8 @@ ModelImporter:
       name: LightSwitchClicker|LightSwitchTurnedOn
       takeName: LightSwitchClicker|LightSwitchClickerAction
       internalID: -4141469120897015537
-      firstFrame: 0
-      lastFrame: 0
+      firstFrame: 5
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -123,8 +123,8 @@ ModelImporter:
       name: LightSwitchClicker|LightSwitchTurnedOff
       takeName: LightSwitchClicker|LightSwitchClickerAction
       internalID: -5560243033315728317
-      firstFrame: 0
-      lastFrame: 5
+      firstFrame: 10
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
