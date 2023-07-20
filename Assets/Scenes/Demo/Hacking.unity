@@ -380,7 +380,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.6998205
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -536,7 +536,47 @@ MonoBehaviour:
   rowBase: 61623
   columnHeight: 17
   rowWidth: 13
-  text: '@\...........:?,:,$!@$!!.&,OXBOW#^/?#/,^?%,........*,@_@&&/#\^+!.;=,&,;%,,.....-%?\+$/%$&^\:&\,|%+/@|!%:=-\&,_/==,-?=^.SATIN:-;|^^%,^|,<,;#%*$%^>;[#$\.#[;]^(*:\-];.),@|(?*TEPID=,.^^?@:(_&,_(+!)+@\\@}\=|RISEN\?%<%+/%\,?>.?\?$$%&;,++^:\FOXED;$$&\??;,==_$$#^^,,BALLY//-;,,&^@/!;=|_@$\_{=?!.......(:/#&..=/}/-\^;!*[.%@;,*&$],HUBBY^+,?:&^=::#^GROUP%;.[:@;%^@*;]<+&_,,&;|>?|,#\.++,-|/=+;\$&/?\,/ROILS::=^#!;_:%@#?_|!,$;+$%%.....^**?;\%^<@-*|,#?>,%^");'
+  wordLength: 5
+  words:
+  - text: '@\...........:?,:,$!@$!!.&,'
+    type: 0
+  - text: OXBOW
+    type: 1
+  - text: '#^/?#/,^?%,........*,@_@&&/#\^+!.;=,&,;%,,.....-%?\+$/%$&^\:&\,|%+/@|!%:=-\&,_/==,-?=^.'
+    type: 0
+  - text: SATIN
+    type: 1
+  - text: :-;|^^%,^|,<,;#%*$%^>;[#$\.#[;]^(*:\-];.),@|(?*
+    type: 0
+  - text: TEPID
+    type: 1
+  - text: =,.^^?@:(_&,_(+!)+@\\@}\=|
+    type: 0
+  - text: RISEN
+    type: 1
+  - text: \?%<%+/%\,?>.?\?$$%&;,++^:\
+    type: 0
+  - text: FOXED
+    type: 1
+  - text: ;$$&\??;,==_$$#^^,,
+    type: 0
+  - text: BALLY
+    type: 1
+  - text: //-;,,&^@/!;=|_@$\_{=?!.......(:/#&..=/}/-\^;!*[.%@;,*&$],
+    type: 0
+  - text: HUBBY
+    type: 1
+  - text: ^+,?:&^=::#^
+    type: 0
+  - text: GROUP
+    type: 1
+  - text: '%;.[:@;%^@*;]<+&_,,&;|>?|,#\.++,-|/=+;\$&/?\,/'
+    type: 0
+  - text: ROILS
+    type: 1
+  - text: ::=^#!;_:%@#?_|!,$;+$%%.....^**?;\%^<@-*|,#?>,%^"
+    type: 0
+  activatable: []
 --- !u!1 &1255426081
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,11 +905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '>Try
-
-    >Entry denied
-
-    >'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
