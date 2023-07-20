@@ -533,6 +533,10 @@ MonoBehaviour:
   leftColumn: {fileID: 1637500344}
   rightColumn: {fileID: 1255426083}
   console: {fileID: 1570377021}
+  rowBase: 61623
+  columnHeight: 17
+  rowWidth: 13
+  text: '@\...........:?,:,$!@$!!.&,OXBOW#^/?#/,^?%,........*,@_@&&/#\^+!.;=,&,;%,,.....-%?\+$/%$&^\:&\,|%+/@|!%:=-\&,_/==,-?=^.SATIN:-;|^^%,^|,<,;#%*$%^>;[#$\.#[;]^(*:\-];.),@|(?*TEPID=,.^^?@:(_&,_(+!)+@\\@}\=|RISEN\?%<%+/%\,?>.?\?$$%&;,++^:\FOXED;$$&\??;,==_$$#^^,,BALLY//-;,,&^@/!;=|_@$\_{=?!.......(:/#&..=/}/-\^;!*[.%@;,*&$],HUBBY^+,?:&^=::#^GROUP%;.[:@;%^@*;]<+&_,,&;|>?|,#\.++,-|/=+;\$&/?\,/ROILS::=^#!;_:%@#?_|!,$;+$%%.....^**?;\%^<@-*|,#?>,%^");'
 --- !u!1 &1255426081
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,46 +595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0xF183 \?$$%&;,++^:\
-
-    0xF18F FOXED;$$&\??;
-
-    0xF19B ,==_$$#^^,,BA
-
-    0xF1A7
-    LLY//-;,,&^@/
-
-    0xF1B3 !;=|_@$\_{=?!
-
-    0xF1BF .......(:/#&.
-
-    0xF1CB
-    .=/}/-\^;!*[.
-
-    0xF1D7 %@;,*&$],HUBB
-
-    0xF1E3 Y^+,?:&^=::#^
-
-    0xF1EF
-    GROUP%;.[:@;%
-
-    0xF1FB ^@*;]<+&_,,&;
-
-    0xF207 |>?|,#\.++,-|
-
-    0xF213
-    /=+;\$&/?\,/R
-
-    0xF21F OILS::=^#!;_:
-
-    0xF22B %@#?_|!,$;+$%
-
-    0xF237
-    %.....^**?;\%
-
-    0xF243 ^<@-*|,#?>,%^
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
@@ -1176,46 +1141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0xF0B7 @\...........
-
-    0xF0C3 :?,:,$!@$!!.&
-
-    0xF0CF ,OXBOW#^/?#/,
-
-    0xF0DB
-    ^?%,........*
-
-    0xF0E7 ,@_@&&/#\^+!.
-
-    0xF0F3 ;=,&,;%,,....
-
-    0xF0FF
-    .-%?\+$/%$&^\
-
-    0xF10B :&\,|%+/@|!%:
-
-    0xF117 =-\&,_/==,-?=
-
-    0xF123
-    ^.SATIN:-;|^^
-
-    0xF12F %,^|,<,;#%*$%
-
-    0xF13B ^>;[#$\.#[;]^
-
-    0xF147
-    (*:\-];.),@|(
-
-    0xF153 ?*TEPID=,.^^?
-
-    0xF15F @:(_&,_(+!)+@
-
-    0xF16B
-    \\\@}\=|RISEN\\
-
-    0xF177 ?%<%+/%\,?>.?
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}

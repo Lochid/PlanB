@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,47 +10,53 @@ public class ComputerHackController : MonoBehaviour
     public TMP_Text rightColumn;
     public TMP_Text console;
 
-    string leftTextRow;
-    string leftText;
-    string rightText;
+    public int rowBase = 61623;
+    public int columnHeight = 17;
+    public int rowWidth = 13;
+    public string text = "";
+    List<string> textRows = new List<string>();
+
+    string getTextColumnString(List<string> textRows, int start, int end, int extLength = 0)
+    {
+        var res = "";
+        var len = rowBase + extLength;
+        for (var i = start; i < end; i++)
+        {
+            var row = textRows[i];
+            res += "0X" + len.ToString("X") + " " + row + "\n";
+            len += row.Length;
+        }
+        return res;
+    }
+    string leftText
+    {
+        get
+        {
+            return getTextColumnString(textRows, 0, columnHeight);
+        }
+    }
+    string rightText
+    {
+        get
+        {
+            return getTextColumnString(textRows, columnHeight, columnHeight*2, columnHeight* rowWidth);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        leftText = "0xF0B7 @\\...........\n" +
-        "0xF0C3 :?,:,$!@$!!.&\n" +
-        "0xF0CF ,OXBOW#^/?#/,\n" +
-        "0xF0DB ^?%,........*\n" +
-        "0xF0E7 ,@_@&&/#\\^+!.\n" +
-        "0xF0F3 ;=,&,;%,,....\n" +
-        "0xF0FF .-%?\\+$/%$&^\\\n" +
-        "0xF10B :&\\,|%+/@|!%:\n" +
-        "0xF117 =-\\&,_/==,-?=\n" +
-        "0xF123 ^.SATIN:-;|^^\n" +
-        "0xF12F %,^|,<,;#%*$%\n" +
-        "0xF13B ^>;[#$\\.#[;]^\n" +
-        "0xF147 (*:\\-];.),@|(\n" +
-        "0xF153 ?*TEPID=,.^^?\n" +
-        "0xF15F @:(_&,_(+!)+@\n" +
-        "0xF16B \\\\@}\\=|RISEN\\\n" +
-        "0xF177 ?%<%+/%\\,?>.?\n";
-        rightText = "0xF183 \\?$$%&;,++^:\\\n" +
-        "0xF18F FOXED;$$&\\??;\n" +
-        "0xF19B ,==_$$#^^,,BA\n" +
-        "0xF1A7 LLY//-;,,&^@/\n" +
-        "0xF1B3 !;=|_@$\\_{=?!\n" +
-        "0xF1BF .......(:/#&.\n" +
-        "0xF1CB .=/}/-\\^;!*[.\n" +
-        "0xF1D7 %@;,*&$],HUBB\n" +
-        "0xF1E3 Y^+,?:&^=::#^\n" +
-        "0xF1EF GROUP%;.[:@;%\n" +
-        "0xF1FB ^@*;]<+&_,,&;\n" +
-        "0xF207 |>?|,#\\.++,-|\n" +
-        "0xF213 /=+;\\$&/?\\,/R\n" +
-        "0xF21F OILS::=^#!;_:\n" +
-        "0xF22B %@#?_|!,$;+$%\n" +
-        "0xF237 %.....^**?;\\%\n" +
-        "0xF243 ^<@-*|,#?>,%^\n";
+        for (int i = 0; i < text.Length; i += rowWidth)
+        {
+            if (text.Length > i + rowWidth)
+            {
+                textRows.Add(text.Substring(i, rowWidth));
+            }
+            else
+            {
+                textRows.Add(text.Substring(i));
+            }
+        }
     }
 
     void Update()
