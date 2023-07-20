@@ -577,6 +577,7 @@ MonoBehaviour:
   - text: ::=^#!;_:%@#?_|!,$;+$%%.....^**?;\%^<@-*|,#?>,%^"
     type: 0
   activatable: []
+  password: ROILS
 --- !u!1 &1255426081
 GameObject:
   m_ObjectHideFlags: 0

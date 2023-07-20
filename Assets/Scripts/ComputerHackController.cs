@@ -119,6 +119,8 @@ public class ComputerHackController : MonoBehaviour
     public int wordLength = 5;
     public List<Glyph> words = new List<Glyph>();
     public List<Glyph> activatable = new List<Glyph>();
+    public string password;
+    List<string> consoleHistory = new List<string>();
     string consoleText = "";
     int wordIndex = 0;
     Glyph currentWord
@@ -195,7 +197,12 @@ public class ComputerHackController : MonoBehaviour
     {
         leftColumn.text = leftText;
         rightColumn.text = rightText;
-        console.text = $">{consoleText}";
+        var res = "";
+        foreach(var str in consoleHistory)
+        {
+            res += str+"\n";
+        }
+        console.text = res+$">{consoleText}";
         if (Input.GetKeyDown(KeyCode.S))
         {
             currentWord.type = GlyphType.Activatable;
@@ -211,6 +218,24 @@ public class ComputerHackController : MonoBehaviour
             {
                 wordIndex = activatable.Count - 1;
             }
+            currentWord.type = GlyphType.Active;
+            consoleText = currentWord.text;
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            currentWord.type = GlyphType.Activatable;
+            consoleHistory.Add($">{currentWord.text}");
+            consoleHistory.Add(">Entry denied");
+            var num = 0;
+            for(int i = 0; i<password.Length; i++)
+            {
+                if(password[i] == currentWord.text[i])
+                {
+                    num++;
+                }
+            }
+            consoleHistory.Add($">{num}/{wordLength} correct.");
+            wordIndex = 0;
             currentWord.type = GlyphType.Active;
             consoleText = currentWord.text;
         }
