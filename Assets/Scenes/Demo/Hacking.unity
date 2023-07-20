@@ -249,7 +249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 Attempts left
+  m_text: "4 ATTEMPT(S) LEFT: \u25A0\u25A0\u25A0\u25A0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
@@ -548,8 +548,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.79, y: -7}
-  m_SizeDelta: {x: 36, y: 68}
+  m_AnchoredPosition: {x: 2.277, y: -7}
+  m_SizeDelta: {x: 32.859, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255426083
 MonoBehaviour:
@@ -571,10 +571,46 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor
+  m_text: '0xF183 \?$$%&;,++^:\
+
+    0xF18F FOXED;$$&\??;
+
+    0xF19B ,==_$$#^^,,BA
+
+    0xF1A7
+    LLY//-;,,&^@/
+
+    0xF1B3 !;=|_@$\_{=?!
+
+    0xF1BF .......(:/#&.
+
+    0xF1CB
+    .=/}/-\^;!*[.
+
+    0xF1D7 %@;,*&$],HUBB
+
+    0xF1E3 Y^+,?:&^=::#^
+
+    0xF1EF
+    GROUP%;.[:@;%
+
+    0xF1FB ^@*;]<+&_,,&;
+
+    0xF207 |>?|,#\.++,-|
+
+    0xF213
+    /=+;\$&/?\,/R
+
+    0xF21F OILS::=^#!;_:
+
+    0xF22B %@#?_|!,$;+$%
+
+    0xF237
+    %.....^**?;\%
+
+    0xF243 ^<@-*|,#?>,%^
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
@@ -709,7 +745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press esc to exit
+  m_text: Press Esc to exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
@@ -821,8 +857,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.7, y: -7}
-  m_SizeDelta: {x: 24, y: 68}
+  m_AnchoredPosition: {x: 34.437, y: -7}
+  m_SizeDelta: {x: 29.125, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570377021
 MonoBehaviour:
@@ -846,7 +882,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '>Try
 
-    >Entry denied'
+    >Entry denied
+
+    >'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
@@ -881,7 +919,7 @@ MonoBehaviour:
   m_fontSizeMax: 0
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -981,9 +1019,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Robco
+  m_text: 'ROBCO INDUSTRIES (TM) TERMALINK PROTOCOL
 
-    Enter password'
+    ENTER PASSWORD NOW'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
@@ -1095,8 +1133,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31, y: -7}
-  m_SizeDelta: {x: 36, y: 68}
+  m_AnchoredPosition: {x: -32.713993, y: -7}
+  m_SizeDelta: {x: 32.571, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637500344
 MonoBehaviour:
@@ -1118,10 +1156,46 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor
+  m_text: '0xF0B7 @\...........
+
+    0xF0C3 :?,:,$!@$!!.&
+
+    0xF0CF ,OXBOW#^/?#/,
+
+    0xF0DB
+    ^?%,........*
+
+    0xF0E7 ,@_@&&/#\^+!.
+
+    0xF0F3 ;=,&,;%,,....
+
+    0xF0FF
+    .-%?\+$/%$&^\
+
+    0xF10B :&\,|%+/@|!%:
+
+    0xF117 =-\&,_/==,-?=
+
+    0xF123
+    ^.SATIN:-;|^^
+
+    0xF12F %,^|,<,;#%*$%
+
+    0xF13B ^>;[#$\.#[;]^
+
+    0xF147
+    (*:\-];.),@|(
+
+    0xF153 ?*TEPID=,.^^?
+
+    0xF15F @:(_&,_(+!)+@
+
+    0xF16B
+    \\\@}\=|RISEN\\
+
+    0xF177 ?%<%+/%\,?>.?
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
   m_sharedMaterial: {fileID: 7106629161879754560, guid: 5d9fd08dbe8906740a6bc121fb487964, type: 2}
