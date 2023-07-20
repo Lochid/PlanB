@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum GlyphType
 {
@@ -111,8 +112,10 @@ public class ComputerHackController : MonoBehaviour
     public TMP_Text leftColumn;
     public TMP_Text rightColumn;
     public TMP_Text console;
+    public TMP_Text hpBar;
 
     public int rowBase = 61623;
+    public int attempts = 4;
     public int columnHeight = 17;
     public int rowWidth = 13;
     GlyphUnition glyphUnition;
@@ -178,6 +181,8 @@ public class ComputerHackController : MonoBehaviour
         }
     }
 
+    bool gameIsDone = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -191,6 +196,17 @@ public class ComputerHackController : MonoBehaviour
         }
         activatable[0].type = GlyphType.Active;
         consoleText = activatable[0].text;
+        DrawAttempts();
+    }
+
+    void DrawAttempts()
+    {
+        var atts = "";
+        for(var i = 0; i<attempts; i++)
+        {
+            atts += "■";
+        }
+        hpBar.text = $"{attempts} ATTEMPT(S) LEFT: {atts}";
     }
 
     void Update()
@@ -202,15 +218,16 @@ public class ComputerHackController : MonoBehaviour
         {
             res += str+"\n";
         }
-        console.text = res+$">{consoleText}";
-        if (Input.GetKeyDown(KeyCode.S))
+        console.text = res+"\n"+$">{consoleText}";
+        DrawAttempts();
+        if (Input.GetKeyDown(KeyCode.S) && !gameIsDone)
         {
             currentWord.type = GlyphType.Activatable;
             wordIndex = (wordIndex + 1) % activatable.Count;
             currentWord.type = GlyphType.Active;
             consoleText = currentWord.text;
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && !gameIsDone)
         {
             currentWord.type = GlyphType.Activatable;
             wordIndex = wordIndex - 1;
@@ -221,23 +238,57 @@ public class ComputerHackController : MonoBehaviour
             currentWord.type = GlyphType.Active;
             consoleText = currentWord.text;
         }
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && gameIsDone)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+        if (Input.GetKeyDown(KeyCode.Return) && !gameIsDone)
         {
             currentWord.type = GlyphType.Activatable;
             consoleHistory.Add($">{currentWord.text}");
-            consoleHistory.Add(">Entry denied");
             var num = 0;
-            for(int i = 0; i<password.Length; i++)
+            for (int i = 0; i < password.Length; i++)
             {
-                if(password[i] == currentWord.text[i])
+                if (password[i] == currentWord.text[i])
                 {
                     num++;
                 }
             }
-            consoleHistory.Add($">{num}/{wordLength} correct.");
-            wordIndex = 0;
-            currentWord.type = GlyphType.Active;
-            consoleText = currentWord.text;
+            if (num < wordLength)
+            {
+                consoleHistory.Add(">Entry denied");
+                consoleHistory.Add($">{num}/{wordLength} correct.");
+                attempts--;
+                wordIndex = 0;
+                currentWord.type = GlyphType.Active;
+                consoleText = currentWord.text;
+                if(attempts == 0)
+                {
+                    consoleHistory.Add(">Access denied");
+                    consoleHistory.Add(">Press enter for restart");
+                    gameIsDone = true;
+                    consoleText = "";
+                }
+            }
+            else
+            {
+                consoleHistory.Add(">Exact match!");
+                consoleHistory.Add(">Please wait");
+                consoleHistory.Add(">while system");
+                consoleHistory.Add(">is accessed.");
+                consoleHistory.Add(">Press enter for restart");
+                gameIsDone = true;
+                consoleText = "";
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
         }
     }
 }
